@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú La Michoacana - Sabores Corredizos por Categoría</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1><strong>La Michoacana</strong></h1>
+</header>
+
+<nav>
+    <div class="menu">
+        <button onclick="mostrarSeccion('inicio')">Inicio</button>
+    </div>
+
+    <div class="menu">
+        <button>Productos dulces ▼</button>
+        <div class="menu-content">
+            <a href="#" onclick="mostrarVista('Helados')">Helados</a>
+            <a href="#" onclick="mostrarVista('Paletas')">Paletas</a>
+            <a href="#" onclick="mostrarVista('Aguas')">Aguas Frescas</a>
+        </div>
+    </div>
+
+    <div class="menu">
+        <button>Productos salados ▼</button>
+        <div class="menu-content">
+            <a href="#" onclick="mostrarVista('Dorilocos')">Dorilocos</a>
+            <a href="#" onclick="mostrarVista('Refrescos')">Refrescos</a>
+            <a href="#" onclick="mostrarVista('Palomitas')">Palomitas</a>
+            <a href="#" onclick="mostrarVista('Nachos')">Nachos</a>
+        </div>
+    </div>
+
+    <div class="menu">
+        <button onclick="mostrarVista('Especiales')">Especiales </button>
+    </div>
+
+    <div class="menu">
+        <button>Redes sociales ▼</button>
+        <div class="menu-content">
+            <a href="#" onclick="mostrarSeccion('Instagram')">Instagram</a>
+            <a href="#" onclick="mostrarSeccion('Tiktok')">TikTok</a>
+            <a href="#" onclick="mostrarSeccion('Correo')">Correo Electrónico</a>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <button onclick="mostrarCarrito()">Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+</nav>
+
+<main>
+    <section id="inicio" class="seccion activa" style="text-align: center;">
+        <h2>Con sabor a Michoacan</h2>
+        <p class="intro">En cada rincón de México hay un lugar capaz de despertar sonrisas con solo ver sus colores. <strong>La Michoacana.</strong> Más que una nevería, es un símbolo de tradición, frescura y sabor que ha conquistado generaciones enteras. Desde sus clásicas paletas y nieves artesanales hasta las cremosas delicias que caracterizan su estilo único, La Michoacana se ha convertido en un punto de encuentro donde familias, amigos y visitantes disfrutan momentos llenos de sabor. Su esencia combina lo tradicional con lo auténtico, ofreciendo productos elaborados con ingredientes naturales que celebran la riqueza culinaria mexicana. Entrar a La Michoacana es vivir una experiencia dulce, refrescante y, sobre todo, inolvidable.</p>
+    </section>
+    
+    <section id="carrito" class="seccion" style="display: none; text-align: center;">
+        <h2>Tu Carrito de Compras</h2>
+        <div id="cart-items-container">
+            <p>El carrito está vacío.</p>
+        </div>
+        <h3>Total: <span id="cart-total">$0.00 MXN</span></h3>
+        <button id="checkout-button" class="checkout-button" onclick="alert('¡Compra finalizada!.')">Finalizar Compra</button>
+    </section>
+
+    <div id="Vista_Helados" class="vista-corrediza" style="display: none;">
+        <section id="Helado_Fresa_Leche" class="food-section">
+            <h2>Helado de Fresa de Leche </h2>
+            <div class="product-description">
+                <p>Una explosión de sabor puro. Elaborado solo con fresas frescas seleccionadas, este helado es la definición de la ligeresa. Su textuira sedosa y su intenso gusto a fruta recien cosechada lo convierten en el postre perfecto para un día caluroso. <strong>¡Sabor autentico, PURO PLACER!</strong></p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresa', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Helado_Vainilla" class="food-section">
+            <h2>Helado de Vainilla Clásica </h2>
+            <div class="product-description">
+                <p>El helado de vainilla es la base y el sabor más íconico de todos los helados. Es un postre a temporal apreciado por su delicado sabor, <big>arómatico y dulce</big>, que proviene del estracto de las semillas de la vaina de vainilla.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Vainilla', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Chocolate" class="food-section">
+            <h2>Helado de Chocolate</h2>
+            <div class="product-description">
+                <p>Este helado de chocolate es la definición de la perfección: <big>increiblemente cremoso, suave y dulce</big> en su punto justo. Elaborado con cacaó de alta calidad y mucha nata fresca, su textura se derrite en el paladar.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocolate', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Nuez" class="food-section">
+            <h2>Helado de Nuez</h2>
+            <div class="product-description">
+                <p>Un sabor que te abraza, nuestra base de helado suave y con un ligero toque de vainilla se infunde con el calido ároma de las nueces. Es la combinación perfecta de <big>cremosidad y textura</big>..</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Fresas_crema" class="food-section">
+            <h2>Helado de Fresas con crema </h2>
+            <div class="product-description">
+                <p>Capturamos el sabor de ese postre tradicional y  lo convertimos en un helado. Utilizamos fresas dulces y troceadas y las fusionamos en una base de crema artesanal, rica y ligeramente dulce. El resultado es un equilibrio perfecto entre la acides vibrante de la fruta y la suavidad atercipelada de la nata. <big>¡pura feliciidad nostalgica!</big>.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Fresas_crema', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Galleta_Oreo" class="food-section">
+            <h2>Helado de Galleta oreo</h2>
+            <div class="product-description">
+                <p>La combinación que nunca falla. Una base de helado de vainilla dulce y cremoso, generosamente cargada con trozos crujientes y abundantes de Galleta Oreo. El contraste entre la suavidad de la crema y el crunch del chocolate te hará querer más. <strong>¡Cada bocado es una sorpresa de textura y sabor!</strong></p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Galleta_Oreo', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Cajeta" class="food-section">
+            <h2>Helado de Cajeta</h2>
+            <div class="product-description">
+                <p>Helado de Dulce de Leche: El sabor que te transporta. <strong>Cremoso, dulce y con el toque artesanal</strong> de la leche caramelizada</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cajeta', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Napolitano" class="food-section">
+            <h2>Helado Napolitano</h2>
+            <div class="product-description">
+                <p>Tres de los clasicos sabores en una fución de sabor unica.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Napolitano', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Nescafe" class="food-section">
+            <h2>Helado de Nescafe</h2>
+            <div class="product-description">
+                <p>La combinación perfecta para los amantes del café. Este helado utiliza una infusión intensa de Nescafé clásico en nuestra base de crema, resultando en un sabor <strong>fuerte, aromático y refrescante</strong>.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Nescafe', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Mamey" class="food-section">
+            <h2>Helado de Mamey </h2>
+            <div class="product-description">
+                <p>Un sabor único y genuino de nuestra tierra. El helado de Mamey te deleitará con su dulzura naturalmente melosa y su inconfundible sabor a calabaza, canela y almendra.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Mamey', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Chicle" class="food-section">
+            <h2>Helado de Chicle </h2>
+            <div class="product-description">
+                <p>¡El helado más divertido! Con su color azul eléctrico y su sabor dulce e inconfundible a la goma de mascar favorita de la <strong>infancia</strong>.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chicle', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Helado_Beso_de_Ángel" class="food-section">
+            <h2>Helado Beso de Ángel </h2>
+            <div class="product-description">
+                <p>La combinación perfecta de texturas y sabores. Un cremoso helado de nata fresca donde se fusionan trozos de cerezas Maraschino brillantes y el crunch aromático de nueces picadas. La cereza le da el color rosado y la dulzura afrutada, mientras que la nuez aporta el contraste perfecto. ¡El clásico sabor del romance!</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Beso_de_Ángel', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Helado_Frutos_Secos" class="food-section">
+            <h2>Helado Frutos Secos </h2>
+            <div class="product-description">
+                <p>Una base de helado extra cremosa que sirve de hogar para una generosa mezcla de almendras, nueces y avellanas. Todos los frutos se tuestan lentamente para potenciar su aroma y se caramelizan ligeramente para un crunch dulce e irresistible.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Frutos_Secos', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Gansito" class="food-section">
+            <h2>Helado de Gansito </h2>
+            <div class="product-description">
+                <p>¡El pastelito más querido, ahora en helado! Vainilla, fresa, chocolate y chispas. El clásico sabor del pastelito, ahora súper frío y cremoso.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Gansito', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Chocomenta" class="food-section">
+            <h2>Helado de Chocomenta </h2>
+            <div class="product-description">
+                <p>La combinación perfecta de frescura y riqueza. Nuestra base de helado tiene un sabor intenso y natural a menta refrescante, con un hermoso color verde claro. Esta cremosidad es interrumpida por generosos trozos y chispas de chocolate semiamargo que se funden en el paladar.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocomenta', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Chocochips" class="food-section">
+            <h2>Helado de Chocochips</h2>
+            <div class="product-description">
+                <p>Una base de helado de vainilla artesanal y excepcionalmente cremosa que es el lienzo perfecto para una cantidad generosa de chispas de chocolate semiamargo.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Chocochips', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Queso" class="food-section">
+            <h2>Helado de Queso</h2>
+            <div class="product-description">
+                <p>Una indulgencia que tienes que probar. Este helado celebra la riqueza del queso fresco en una base de nata extra cremosa. Su sabor es sorprendentemente equilibrado: ligeramente dulce, con un toque salino sutil y fresco que lo hace adictivo.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Queso_Con_Zarzamora" class="food-section">
+            <h2>Helado de Queso con Zarzamora</h2>
+            <div class="product-description">
+                <p>La combinación perfecta de sabores contrastantes. Nuestra base de helado de queso artesanal, rica y suave como un cheesecake, se atraviesa con un espeso y ácido remolino de zarzamoras frescas.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Queso_Con_Zarzamora', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Tentación" class="food-section">
+            <h2>Helado Tentación </h2>
+            <div class="product-description">
+                <p>Helado a base de vainilla con cereales, piñon, pistache, almendra, pasas, nuez, entre otros. Este helado es la definición de la indulgencia extrema.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Tentación', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Cereza" class="food-section">
+            <h2>Helado de cereza</h2>
+            <div class="product-description">
+                <p>Un helado que captura la esencia pura del verano. Elaborado con cerezas maduras y ligeramente ácidas, su dulzura se equilibra con una acidez vibrante, y su color es de un hermoso rojo natural. ¡Perfecto para refrescarse con un sabor auténtico!</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Cereza', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Choco-Nuez" class="food-section">
+            <h2>Helado de Choco-Nuez </h2>
+            <div class="product-description">
+                <p>Un sueño para los amantes del chocolate y las nueces. Nuestra base de helado de chocolate negro intenso se mezcla con generosos trozos de nueces recién tostadas para asegurar el crunch perfecto en cada bocado. El sabor profundo y ligeramente amargo del chocolate se equilibra perfectamente con la mantecosidad de la nuez.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Helado_Ferrero" class="food-section">
+            <h2>Helado de Ferrero </h2>
+            <div class="product-description">
+                <p> Lujosamente cremoso, con un intenso sabor a <stromg>avellana tostada</stromg> y crujinetes <strong>trozos de oblea</strong>.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Fresa_Agua" class="food-section">
+            <h2>Helado de Fresa de agua</h2>
+            <div class="product-description">
+                <p>El sabor dulce y jugoso de la fruta fresca <strong>¡Clásica e irresistible!</strong></p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Limón" class="food-section">
+            <h2>Helado de Limón </h2>
+            <div class="product-description">
+                <p>Cítrica y muy ácida <stromg>¡El golpe de frescura más intenso!</stromg></p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Helado_Mango" class="food-section">
+            <h2>Helado de Mango </h2>
+            <div class="product-description">
+                <p>Dulce y exótico <strong>El sabor puro</strong> del mejor mango maduro.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Helado_Kiwi" class="food-section">
+            <h2>Helado de Kiwi </h2>
+            <div class="product-description">
+                <p>Vibrante y refrescante.  Un toque ácido con el dulce perfecto.</p>
+                <h3>Presentación y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cono sencillo</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono sencillo', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Cono doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Cono grande</td> <td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Cono grande', 45.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td> <td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Medio Litro', 70.00)">Agregar</button></td></tr>
+                        <tr><td>Litro</td> <td>$130.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Litro', 130.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso sencillo (Bola)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso sencillo (Bola)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso doble</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso doble', 40.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso triple</td> <td>$52.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Helado_Choco-Nuez', 'Vaso triple', 52.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div> 
+    
+    <div id="Vista_Paletas" class="vista-corrediza" style="display: none;">
+        <section id="Paleta_Mnago" class="food-section">
+            <h2>Paleta Mango </h2>
+            <div class="product-description">
+                <p>El néctar del verano. Jugoso, dulce y con el sabor puro del mejor mango de temporada.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Galleta', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Paleta_Fresa_Agua" class="food-section">
+            <h2>Paleta Fresa de agua </h2>
+            <div class="product-description">
+                <p>La paleta de Fresa (Agua) es una paleta sencilla con un sabor muy dulce y refrescante. Además es una de nuestras paletas principales.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Paleta_Limón" class="food-section"> 
+            <h2>Paleta Limón </h2>
+            <div class="product-description">
+                <p>La paleta de Limón (Agua) es una paleta sencilla añll igual que la de fresa, estos dos sabores se complementan muy bien y al igual es uno de nuestros primeros sabores en ser vendidos desde el inicio en el establecimiento.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Paleta_Kiwi" class="food-section"> 
+            <h2>Paleta Kiwi </h2>
+            <div class="product-description">
+                <p>Dulce con una nota ácida vibrante. Refrescante, con la textura suave y las semillas características.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Paleta_Melón" class="food-section"> 
+            <h2>Paleta Melón</h2>
+            <div class="product-description">
+                <p>Suavemente dulce y extremadamente hidratante. Una paleta que sabe a pura frescura.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Paleta_Piña" class="food-section"> 
+            <h2>Paleta Piña</h2>
+            <div class="product-description">
+                <p>Dulce y ácida a la vez. El sabor tropical por excelencia, con trocitos de fruta natural.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Paleta_Guayaba" class="food-section"> 
+            <h2>Paleta Guayaba</h2>
+            <div class="product-description">
+                <p>Dulce y ligeramente floral. Una paleta con el sabor intenso y aromático de la auténtica guayaba.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Paleta_Zapote" class="food-section"> 
+            <h2>Paleta Zapote</h2>
+            <div class="product-description">
+                <p>Cremoso, dulce y con un toque terroso. Un sabor profundo y reconfortante, ideal para quienes buscan algo diferente.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+         <section id="Paleta_Guanábana" class="food-section"> 
+            <h2>Paleta Guanábana</h2>
+            <div class="product-description">
+                <p>Exquisitamente agridulce. El sabor inconfundible, con notas cítricas y textura suavemente fibrosa.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Paleta_Frutas_Tropicales" class="food-section"> 
+            <h2>Paleta Frutas Tropicales</h2>
+            <div class="product-description">
+                <p>Una explosión de sabor. Combinación de nuestras mejores frutas exóticas para un golpe de frescura.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Paleta_Mango_Chile" class="food-section"> 
+            <h2>Paleta Frutas Tropicales</h2>
+            <div class="product-description">
+                <p>Una explosión de sabor. Combinación de nuestras mejores frutas exóticas para un golpe de frescura.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Limón', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Paleta_coco" class="food-section">
+            <h2>Paleta de coco</h2>
+            <div class="product-description">
+                <p>El sabor de la playa. Hecha a base de agua de coco y trozos de pulpa, es deliciosamente refrescante.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    <section id="Paleta_Galleta_Oreo" class="food-section">
+            <h2>Paleta de Galleta oreo</h2>
+            <div class="product-description">
+                <p>El sabor de la playa. Hecha a base de agua de coco y trozos de pulpa, es deliciosamente refrescante.</p>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Presentación</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Paleta chica (Rectangular)</td> <td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica (Rectangular)', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana (Rectangular)</td> <td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana (Rectangular)', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande (Rectangular)</td> <td>$28.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande (Rectangular)', 28.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta chica con chile (Rectangular)</td> <td>$20.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta chica con chile (Rectangular)', 20.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta mediana cin chile (Rectangular)</td> <td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta mediana cin chile (Rectangular)', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta Grande con chile (Rectangular)</td> <td>$32.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta Grande con chile (Rectangular)', 32.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi (Larga)</td> <td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi (Larga)', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Paleta maxi cin chile (Larga)</td> <td>$40.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Paleta_Fresa', 'Paleta maxi cin chile (Larga)', 40.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+    <div id="Vista_Aguas" class="vista-corrediza" style="display: none;">
+        <section id="Agua_Horchata" class="food-section">
+            <h2>Agua de Horchata </h2>
+            <div class="product-description">
+                <p>Preparada con arroz, canela y leche, endulzada al punto. ¡La favorita!</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Jarra (Litro)</td><td>$30.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Horchata', 'Jarra (Litro)', 30.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td><td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Horchata', 'Medio Litro', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Grande</td><td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Horchata', 'Vaso Grande', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Mediano</td><td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Horchata', 'Vaso Mediano', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Chico</td><td>$15.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Horchata', 'Vaso Chico', 15.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Agua_Jamaica" class="food-section">
+            <h2>Agua de Jamaica </h2>
+            <div class="product-description">
+                <p>Preparada con flor de Jamaica natural, refrescante y con muchos beneficios.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Jarra (Litro)</td><td>$30.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Jamaica', 'Jarra (Litro)', 30.00)">Agregar</button></td></tr>
+                        <tr><td>Medio Litro</td><td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Jamaica', 'Medio Litro', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Grande</td><td>$22.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Jamaica', 'Vaso Grande', 22.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Mediano</td><td>$18.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Jamaica', 'Vaso Mediano', 18.00)">Agregar</button></td></tr>
+                        <tr><td>Vaso Chico</td><td>$15.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Agua_Jamaica', 'Vaso Chico', 15.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+    
+    <div id="Vista_Dorilocos" class="vista-corrediza" style="display: none;">
+        <section id="Dorilocos_Clasicos" class="food-section">
+            <h2>Dorilocos Clásicos </h2>
+            <div class="product-description">
+                <p>El antojo que nunca falla. Doritos Nacho con cueritos, cacahuates japoneses, salsa y chile en polvo.</p>
+                <h3>Opciones y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Individual</td><td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Dorilocos_Clasicos', 'Individual', 45.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Dorilocos_Especiales" class="food-section">
+            <h2>Dorilocos Especiales </h2>
+            <div class="product-description">
+                <p>Nuestra versión especial con más ingredientes, como salchicha, queso y aderezo especial.</p>
+                <h3>Opciones y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Individual</td><td>$65.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Dorilocos_Especiales', 'Individual', 65.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+    
+    <div id="Vista_Refrescos" class="vista-corrediza" style="display: none;">
+        <section id="Refresco_CocaCola" class="food-section">
+            <h2>Refresco Coca Cola </h2>
+            <div class="product-description">
+                <p>Refresco en lata, el sabor de siempre.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lata 355ml</td><td>$16.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Refresco_CocaCola', 'Lata 355ml', 16.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Refresco_Sprite" class="food-section">
+            <h2>Refresco Sprite </h2>
+            <div class="product-description">
+                <p>Refresco en lata sabor lima-limón.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lata 355ml</td><td>$16.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Refresco_Sprite', 'Lata 355ml', 16.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Refresco_Fanta" class="food-section">
+            <h2>Refresco Fanta </h2>
+            <div class="product-description">
+                <p>Refresco en lata sabor naranja.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lata 355ml</td><td>$16.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Refresco_Fanta', 'Lata 355ml', 16.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="Refresco_Manzana" class="food-section">
+            <h2>Refresco Manzana </h2>
+            <div class="product-description">
+                <p>Refresco en lata sabor manzana.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lata 355ml</td><td>$16.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Refresco_Manzana', 'Lata 355ml', 16.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+    
+    <div id="Vista_Palomitas" class="vista-corrediza" style="display: none;">
+        <section id="Palomitas_Mantequilla" class="food-section">
+            <h2>Palomitas Mantequilla Salada </h2>
+            <div class="product-description">
+                <p>Palomitas recién hechas, perfectas para disfrutar.</p>
+                <h3>Tamaños y precios</h3>
+                <table class="tabla-productos">
+                    <thead> 
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Chico</td><td>$25.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Palomitas_Mantequilla', 'Chico', 25.00)">Agregar</button></td></tr>
+                        <tr><td>Mediano</td><td>$35.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Palomitas_Mantequilla', 'Mediano', 35.00)">Agregar</button></td></tr>
+                        <tr><td>Grande</td><td>$55.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Palomitas_Mantequilla', 'Grande', 55.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+    
+    <div id="Vista_Nachos" class="vista-corrediza" style="display: none;">
+        <section id="Nachos_Individual" class="food-section">
+            <h2>Nachos Individual </h2>
+            <div class="product-description">
+                <p>Nachos con queso, crema, jalapeños y tu salsa favorita.</p>
+                <h3>Opciones y precios</h3>
+                <table class="tabla-productos">
+                    <thead>
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Individual</td><td>$45.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Nachos_Individual', 'Individual', 45.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="Nachos_Duo" class="food-section">
+            <h2>Nachos Dúo (Para compartir) </h2>
+            <div class="product-description">
+                <p>El doble de porción para que compartas tu antojo.</p>
+                <h3>Opciones y precios</h3>
+                <table class="tabla-productos">
+                    <thead>
+                        <tr><th>Tamaño</th><th>Precio</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Dúo</td><td>$70.00 MXN</td> <td><button class="add-to-cart-btn" onclick="addToCart('Nachos_Duo', 'Dúo', 70.00)">Agregar</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+
+ <section id="Instagram" class="seccion" style="text-align: center;">
+        <h2>Instagram: @LaMichoacana_oficial</h2>
+        <p><strong>¡Síguenos!</strong> Publicamos fotos de nuestros productos, dinámicas, ofertas especiales y videos de cómo preparamos tu antojo favorito.</p>
+    </section>
+    <section id="Tiktok" class="seccion" style="text-align: center;">
+        <h2>TikTok: @LaMichoacana_oficial</h2>
+        <p>Mira nuestros videos virales, conoce a nuestro equipo y descubre promociones exclusivas para nuestros seguidores de TikTok.</p>
+    </section>
+    <section id="Correo" class="seccion" style="text-align: center;">
+        <h2> Correo Electrónico</h2>
+        <p>Para pedidos especiales, cotizaciones o comentarios, escríbenos a: <strong>LaMichoacana@gmail.com</strong></p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

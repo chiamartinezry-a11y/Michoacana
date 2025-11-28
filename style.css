@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; 
+    /* Fondo corredizo */
+    background-color: #f3f4f6; 
+    color: #111827; 
+    position: relative;
+    z-index: 1;
+    transition: background-image 0.6s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #eaccad; 
+    color: rgb(5, 0, 0);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    background-color: #fdecda; 
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    position: sticky; 
+    top: 0;
+    z-index: 10;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu button {
+    background-color: #E3D5CA;
+    color: rgb(2, 0, 0);
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+}
+
+.menu button:hover {
+    background-color: #fbd5e5;
+}
+
+/* Submenús */
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9fafb;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    z-index: 20;
+}
+
+.menu-content a {
+    color: #020001; 
+    padding: 0.8rem 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-content a:hover {
+    background-color: #e5e7ebbb;
+}
+
+/* Mostrar submenú al pasar el ratón */
+.menu:hover .menu-content {
+    display: block;
+}
+
+/* Secciones de Contenido */
+main {
+    padding: 0; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Secciones genéricas (Inicio, Redes Sociales) */
+.seccion {
+    display: none;
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 100%;
+    text-align: left;
+}
+.seccion.activa {
+    display: block;
+}
+
+/* Contenedores de vistas */
+.vista-corrediza {
+    display: none; 
+}
+
+/* Estilos de las secciones de productos con imágenes corredizas (food-section) */
+.food-section {
+    min-height: 100vh; 
+    padding: 50px 20px;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.75); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.food-section h2 {
+    text-align: center;
+    color: #070104; 
+    border-bottom: 2px solid #e4a6c3; 
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.product-description {
+    padding: 20px;
+    border-left: 4px solid #de9aeb;
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.tabla-productos th, .tabla-productos td {
+    border: 1px solid #0e0007;
+    padding: 10px;
+    text-align: left;
+}
+.tabla-productos th {
+    background-color: #f7bfd8;
+    color: white;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* 1. PALETA DE COLORES ROSAS Y LILAS (MODIFICANDO ELEMENTOS EXISTENTES) */
+:root {
+    --color-principal-rosa: #db9ec4; /* Rosa Fucsia/Cálido */
+    --color-secundario-lila: #f0c5e1; /* Lila suave */
+    --color-texto-oscuro: #ec95d7; /* Morado Oscuro */
+    --color-fondo-claro: #fbeaff; /* Fondo muy claro/lavanda */
+}
+
+header {
+    background-color: var(--color-principal-rosa); 
+    color: white;
+}
+
+nav {
+    background-color: var(--color-fondo-claro);
+}
+
+.menu button {
+    background-color: var(--color-secundario-lila);
+    color: white;
+    border: none;
+}
+
+.food-section h2 {
+    color: var(--color-texto-oscuro);
+    border-bottom: 3px solid var(--color-principal-rosa);
+}
